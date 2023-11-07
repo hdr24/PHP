@@ -1,0 +1,5 @@
+nav {
+    display: grid;
+    grid-template-columns: 4;
+    background-color: aqua;
+}

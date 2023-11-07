@@ -17,6 +17,8 @@
     <?php
 
     try {
+        require("funciones.php");
+
         $dbs = new PDO('mysql:host=localhost;dbname=ventas_comerciales', 'dwes', 'dwes');
 
         $list = $dbs->query('SELECT nombre FROM comerciales');
@@ -27,6 +29,8 @@
         foreach ($list as $row) {
             echo $row['nombre'] . '<br>';
         }
+
+        insertProductos($dbs, "1", "ejemplo", "ejemplo", "43", "10");
     } catch (\Throwable $th) {
         
     }

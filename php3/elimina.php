@@ -14,5 +14,13 @@
         <a href="modifica.php">Modificacion de datos</a>
         <a href="elimina.php">Eliminacion de datos</a>
     </nav>
+
+    <?php
+    
+ 
+
+
+    
+    ?>
 </body>
 </html>

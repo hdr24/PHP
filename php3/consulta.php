@@ -14,5 +14,16 @@
         <a href="modifica.php">Modificacion de datos</a>
         <a href="elimina.php">Eliminacion de datos</a>
     </nav>
+
+    <?php 
+
+        try {
+            $dbs = new PDO('mysql:host=localhost;dbname=ventas_comerciales', 'dwes', 'dwes');
+
+                    } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+    ?>
 </body>
 </html>

@@ -22,4 +22,15 @@ function insertProductos($db, $referencia, $nombre, $descripcion, $precio, $desc
     $stmt->execute([$referencia, $nombre, $descripcion, $precio, $descuento]);
 }
 
+function consultaComercial ($db, $comercial) {
+    $sql = "SELECT refProducto, cantidad, fecha from ventas WHERE codComercial = '" . $comercial . "'";
+    $list = $db->query($sql);
+    echo "<table><tr><td>Producto</td><td>Cantidad</td><td>Fecha</td>";
+    foreach ($list as $row) {
+        echo"<tr><td>". $row["refProducto"] ."</td><td>". $row["cantidad"]. "</td><td>" . $row["fecha"] . "</td></tr>";
+    }
+    echo "</table>";
+    
+}
+
 ?>

@@ -3,3 +3,6 @@ nav {
     grid-template-columns: 4;
     background-color: aqua;
 }
+table, td {
+    border: 1px solid black;
+}

@@ -33,12 +33,12 @@ function consultaComercialDado ($db, $comercial) {
     
 }
 
-function consultaVentas ($db, $comercial) {
-    $sql = "SELECT refProducto, cantidad, fecha from ventas WHERE codComercial = '" . $comercial . "'";
+function consultaVentas ($db) {
+    $sql = "SELECT * from ventas";
     $list = $db->query($sql);
-    echo "<table><tr><td>Producto</td><td>Cantidad</td><td>Fecha</td>";
+    echo "<table><tr><td>CodComercial</td><td>refProducto</td><td>Cantidad</td><td>Fecha</td>";
     foreach ($list as $row) {
-        echo"<tr><td>". $row["refProducto"] ."</td><td>". $row["cantidad"]. "</td><td>" . $row["fecha"] . "</td></tr>";
+        echo"<tr><td>" . $row["codComercial"] ."</td><td>". $row["refProducto"] ."</td><td>". $row["cantidad"]. "</td><td>" . $row["fecha"] . "</td></tr>";
     }
     echo "</table>";
     

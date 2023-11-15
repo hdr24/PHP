@@ -1,8 +1,26 @@
 nav {
     display: grid;
-    grid-template-columns: 4;
-    background-color: aqua;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #00FFDD;
+    justify-items: center;
+    padding: 0;
+    align-items: center;
+    font-size: large;
+    margin: 0;
+    margin-bottom: 10px;
+    
 }
 table, td {
     border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: #FF6C2E;
+    border: 1px #FF6C2E solid;
+    display: block;
+    padding: 10px;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin: 0;
 }

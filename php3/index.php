@@ -24,15 +24,6 @@
     </nav>
     <?php
 
-    try {
-        require("funciones.php");
-
-        $dbs = new PDO('mysql:host=localhost;dbname=ventas_comerciales', 'dwes', 'dwes');
-
-        consultaComercialDado($dbs, '111');
-    } catch (\Throwable $th) {
-        
-    }
 
     ?>
 </body>

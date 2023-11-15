@@ -49,18 +49,10 @@
                 }
                 break;
             case 2:
-                $list = $dbs->query('SELECT nombre, referencia FROM productos');
-
-                foreach ($list as $row) {
-                    echo '<option value"' . $row['referencia'] . '">' . $row['nombre'] . '</option>';
-                }
+                consultaProductos($dbs);
                 break;
             case 3:
-                $list = $dbs->query('SELECT nombre, codigo FROM comerciales');
-
-                foreach ($list as $row) {
-                    echo '<option value"' . $row['codigo'] . '">' . $row['nombre'] . '</option>';
-                }
+                consultaComerciales($dbs);
                 break;
             case 4:
                 consultaVentas($dbs);

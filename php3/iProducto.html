@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserta Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.php">Inicio</a>
+        <form action="consulta.php" method="post">
+                <select name="id">
+                    <option value="1">comercial dado</option>
+                    <option value="2">Productos</option>
+                    <option value="3">Comerciales</option>
+                    <option value="4">Ventas</option>
+                </select>
+                <input type="submit" value="Consulta de datos">
+            </form>
+            <a href="inserta.php">Insercion de datos</a>
+            <a href="modifica.php">Modificacion de datos</a>
+            <a href="elimina.php">Eliminacion de datos</a>
+        </nav>
+
+        <form action="inserta.php" method="post">
+            <label for="ref">Referencia</label>
+            <input type="text" name="referencia" id="ref" required><br>
+
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required><br>
+
+            <label for="descripcion">Descripcion</label>
+            <input type="text" name="descripcion" id="descripcion" required><br>
+
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" required><br>
+
+            <label for="descuento">Descuento</label>
+            <input type="number" name="descuento" id="descuento" required><br>
+
+            <input type="submit" value="Insertar producto">
+
+            <input type="hidden" name="id" value="1">
+        </form>
+</body>
+</html>

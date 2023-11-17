@@ -1,6 +1,6 @@
 <?php
 
-    // ========INSERCION=========
+    // ========INSERTION=========
 
 function insertComerciales($db, $codigo, $nombre, $salario, $hijos, $fnacimiento) {
     $sql = "INSERT INTO comerciales (codigo, nombre, salario, hijos, fNacimiento) VALUES (?,?,?,?,?)";
@@ -22,7 +22,7 @@ function insertProductos($db, $referencia, $nombre, $descripcion, $precio, $desc
 
 
 
-    // ========= CONSULTAS =========
+    // ========= QUERIES =========
 
 function consultaComercialDado ($db, $comercial) {
     $sql = "SELECT refProducto, cantidad, fecha from ventas WHERE codComercial = '" . $comercial . "'";
@@ -64,4 +64,21 @@ function consultaProductos ($db) {
     echo "</table>";
 }
 
+    // =========== DELETING ==========
+
+
+    // We delete by default every sale associated with a product/salesman
+    function deleteProducto ($db, $id) {
+        $db->exec("DELETE FROM ventas WHERE refProducto='". $id ."'");
+        $db->exec("DELETE FROM productos WHERE referencia='".$id."'");
+    }
+
+    function deleteComercial ($db, $id) {
+        $db->exec("DELETE FROM ventas WHERE codComercial='". $id ."'");
+        $db->exec("DELETE FROM comerciales WHERE codigo='".$id."'");
+    }
+
+    function deleteVenta ($db, $codComercial, $refProducto) {
+        $db->exec("DELETE FROM ventas WHERE codComercial='". $codComercial ."' AND refProducto='".$refProducto."'");
+    }
 ?>

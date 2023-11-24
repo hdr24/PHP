@@ -17,3 +17,7 @@
         }
     </style>
 </head>
+<body>
+    <h1>Informacion</h1>
+    <p>Para usar la aplicacion debe iniciar sesion o registrarte, luego puede cambiar el color de fondo en preferencias</p>
+</body>

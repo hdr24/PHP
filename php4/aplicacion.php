@@ -15,7 +15,7 @@
     <a href="preferencias.php">Preferencias</a>
     <a href="aplicacion.php?cerrar=true">Cerrar sesion</a>
 
-    <?php 
+    <?php
     if (isset($_GET['cerrar'])) {
         session_destroy();
         header("Location: index.php");

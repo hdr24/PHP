@@ -6,18 +6,14 @@
     <title>Preferencias</title>
     <style>
         body {
-            background-color: <?php
-                if (isset($_POST['color'])) {
-                    setcookie('color', $_POST['color']);
-                    echo $_POST['color'];
-                } else if (isset($_COOKIE['color'] )) {
-                    echo $_COOKIE['color'];
-                }
-                ?>
+            background-color: <?php require("funciones.php");
+            cambiaColor();?>
         }
     </style>
 </head>
 <body>
     <h1>Informacion</h1>
     <p>Para usar la aplicacion debe iniciar sesion o registrarte, luego puede cambiar el color de fondo en preferencias</p>
+
+    <a href="index.php">Volver al indice ↩</a>
 </body>

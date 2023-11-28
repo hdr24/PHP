@@ -7,15 +7,19 @@
     <title>Preferencias</title>
     <style>
         body {
-            background-color: <?php
-                if (isset($_POST['color'])) {
-                    setcookie('color', $_POST['color']);
-                    echo $_POST['color'];
-                } else if (isset($_COOKIE['color'] )) {
-                    echo $_COOKIE['color'];
-                }
-                ?>
+            background-color: <?php require("funciones.php"); cambiaColor();?>
         }
-        
     </style>
+<body>
+    <a href="informacion.php">Informacion</a>
+    <a href="preferencias.php">Preferencias</a>
+    <a href="aplicacion.php?cerrar=true">Cerrar sesion</a>
+
+    <?php 
+    if (isset($_GET['cerrar'])) {
+        session_destroy();
+        header("Location: index.php");
+    }
+    ?>
+</body>
 </head>

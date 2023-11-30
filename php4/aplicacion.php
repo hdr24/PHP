@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php if (! isset($_SESSION['sesion'])) {header('Location: informacion.php');}?>
+    <?php
+    session_start();
+    if (! isset($_SESSION['user'])) {header('Location: informacion.php');}?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preferencias</title>
@@ -17,6 +19,7 @@
 
     <?php
     if (isset($_GET['cerrar'])) {
+        unset($_SESSION['color']);
         session_destroy();
         header("Location: index.php");
     }

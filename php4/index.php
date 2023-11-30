@@ -6,7 +6,9 @@
     <title>Indice</title>
     <style>
         body {
-            background-color: <?php require("funciones.php");
+            background-color: <?php
+            session_start();
+            require("funciones.php");
             cambiaColor();?>
         }
 

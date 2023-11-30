@@ -6,7 +6,9 @@
     <title>Preferencias</title>
     <style>
         body {
-            background-color: <?php require("funciones.php");
+            background-color: <?php
+            session_start();
+            require("funciones.php");
             cambiaColor();?>
         }
     </style>
@@ -16,4 +18,9 @@
     <p>Para usar la aplicacion debe iniciar sesion o registrarte, luego puede cambiar el color de fondo en preferencias</p>
 
     <a href="index.php">Volver al indice ↩</a>
+    <?php 
+    if (isset($_SESSION['user'])) {
+        echo "<a href='aplicacion.php'>Volver a aplicacion↩ </a>";
+    }
+    ?>
 </body>

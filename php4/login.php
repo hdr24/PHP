@@ -12,7 +12,7 @@ try {
             session_start();
             $_SESSION['user'] = $row['usuario'];
             $_SESSION['time'] = time();
-            
+            header('Location: aplicacion.php');
         } else {
             header('Location: index.php?error=true');
         }
@@ -21,7 +21,7 @@ try {
     
 
 } catch (\Throwable $th) {
-    //throw $th;
+    echo 'Ha ocurrido un error, contacte con el administrador';
 }
 
 ?>

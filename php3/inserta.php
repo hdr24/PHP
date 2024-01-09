@@ -39,7 +39,7 @@
             $dbs->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-
+            // We use a switch to determine what we have to insert then get the values from POST and insert them
             switch ($_POST["id"]) {
                 case 1:
                     insertProductos($dbs, $_POST["referencia"], $_POST["nombre"], $_POST["descripcion"], $_POST["precio"], $_POST["descuento"]);
@@ -54,9 +54,7 @@
 
             }
         } catch (\Throwable $th) {
-            // Debugging statement
-            echo "Exception caught: " . $th->getMessage();
-            //throw $th;
+            echo 'There was an error contact with the administrator';
         }
     }
 

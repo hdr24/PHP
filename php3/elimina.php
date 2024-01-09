@@ -64,10 +64,11 @@
                 $list = $dbs->query('SELECT referencia, nombre from productos');
 
                 foreach ($list as $row) {
+                    // For each value we create a field
                     echo '<option value=' . $row['referencia'] . '>' . $row['nombre'] . '</option><br>';
                 }
             } catch (\Throwable $th) {
-                //throw $th;
+                echo 'There was an error contact with the administrator';
             }
             ?>
         </select>
@@ -91,7 +92,7 @@
                     echo '<option value=' . $row['codigo'] . '>' . $row['nombre'] . '</option>';
                 }
             } catch (\Throwable $th) {
-                //throw $th;
+                echo 'There was an error contact with the administrator';
             }
             ?>
         </select>
@@ -118,7 +119,7 @@
                     echo '<option value=' . $row['codigo'] . '>' . $row['nombre'] . '</option>';
                 }
             } catch (\Throwable $th) {
-                //throw $th;
+                echo 'There was an error contact with the administrator';
             }
             ?>
 
@@ -138,7 +139,7 @@
                     echo '<option value=' . $row['referencia'] . '>' . $row['nombre'] . '</option><br>';
                 }
             } catch (\Throwable $th) {
-                //throw $th;
+                echo 'There was an error contact with the administrator';
             }
             ?>
         </select><br>

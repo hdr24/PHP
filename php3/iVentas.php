@@ -28,7 +28,7 @@
     <label for="codComercial">Codigo de Comercial</label>
     <select name="codComercial" id="codComercial">
         <?php
-        
+        // We make a dropdown list with the data in the database
         try {
             $dbs = new PDO('mysql:host=localhost;dbname=ventas_comerciales', 'dwes', 'dwes');
             $dbs->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -39,7 +39,7 @@
                 echo '<option value='. $row['codigo'] .'>'. $row['nombre'] . '</option>';
             }
         } catch (\Throwable $th) {
-            //throw $th;
+            echo 'There was an error contact with the administrator';
         }
         ?>
     </select> <br>
@@ -58,7 +58,7 @@
                 echo '<option value='. $row['referencia'] .'>'. $row['nombre'] . '</option><br>';
             }
         } catch (\Throwable $th) {
-            //throw $th;
+            echo 'There was an error contact with the administrator';
         }
         ?>
     </select><br>

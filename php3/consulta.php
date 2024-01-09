@@ -30,12 +30,14 @@
     try {
         $dbs = new PDO('mysql:host=localhost;dbname=ventas_comerciales', 'dwes', 'dwes');
 
+        // Depending on what we chose before we use a switch to display the desired data
         switch ($_POST['id']) {
             case 1:
 
                 if (isset($_POST['cod'])) {
                     consultaComercialDado($dbs, $_POST['cod']);
                 } else {
+                    // Before displaying a set comercial we have to select which one we want to display
                     $list = $dbs->query('SELECT nombre, codigo FROM comerciales');
 
                     echo '<form action="consulta.php" method="post"><select name="cod">';
@@ -67,7 +69,7 @@
         unset($dbs);
 
     } catch (\Throwable $th) {
-        //throw $th;
+        echo 'There was an error contact with the administrator';
     }
 
     ?>

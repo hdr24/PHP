@@ -29,7 +29,7 @@
         <input type="submit" value="Iniciar sesion">
 
         <?php 
-        
+        // We use the get method to display an error message if the login is unsuccesful
         if (isset($_GET['error'])) {
             echo '<p id="error">El usuario o la contraseña es incorrecto</p>';
         }

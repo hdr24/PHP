@@ -19,6 +19,7 @@
 
     <a href="index.php">Volver al indice ↩</a>
     <?php 
+    // If we are logged in we can go back to the app page.
     if (isset($_SESSION['user'])) {
         echo "<a href='aplicacion.php'>Volver a aplicacion↩ </a>";
     }

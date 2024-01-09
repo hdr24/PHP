@@ -22,7 +22,7 @@
   require_once("crud.php");
 
 
-  // Empezamos la funcion 
+  // Empezamos la sesion
   session_start();
 
   if (isset($_SESSION['lista'])) {

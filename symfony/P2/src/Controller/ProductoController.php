@@ -13,10 +13,40 @@ class ProductoController extends AbstractController {
     #[Route('/producto')]
     public function producto(Request $request, EntityManagerInterface $entityManager): Response {
         
-        $product = new Producto();
-        $form = $this->createForm(InsertarProductoType::class, $product);
+        $repository = $entityManager->getRepository(producto::class);
+        $products = $repository->findAll();
+
+        return $this->render('index.html.twig', ['productos' => $products]);
+    }
+
+    #[Route('/insertar')]
+    public function insertaProducto(Request $request, EntityManagerInterface $entityManager) {
+        $producto = new producto();
+
+        $form = $this->createForm(insertarProductoType::class, $producto);
         $form->handleRequest($request);
 
-        return $this->render('index.html.twig', ['form' => $form->createView()]);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $entityManager->persist($data);
+            $entityManager->flush();
+
+            return $this->render('insertado.html.twig');
+        }
+        return $this->render('insertar.html.twig', ['form' => $form]);
+
+        
+    }
+
+    #[Route('/producto/{id}')]
+    public function productoEspecifico(EntityManagerInterface $entityManager, $id) {
+        $repository = $entityManager->getRepository(producto::class);
+        $producto = $repository->findBy(['id' => $id]);
+
+        if (!(empty($producto))) {
+            return $this->render('producto.html.twig', ['productos' => $producto]);
+        } else {
+            die ('El producto no existe');
+        }
     }
 }

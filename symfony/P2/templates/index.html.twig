@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
-{% block title %}Insertar producto{% endblock %}
+{% block title %}Productos{% endblock %}
 {% block body %}
-{{form(form)}}
-
+<table>
+<tr>
+    <td>Nombre del producto</td>
+    <td>Precio del producto</td>
+    <td>Enlace al producto</td>
+    </tr>
+{% for producto in productos %}
+    <tr>
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.precio}} $</td>
+    <td><a href='/producto/{{producto.id}}'>Ver producto</a></td>
+    </tr>
+{% endfor %}
+</table>
 {% endblock %}

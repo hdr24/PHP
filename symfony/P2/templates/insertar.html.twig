@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}Insertar producto
+{% endblock %}
+{% block body %}
+	<form method="post">
+		{{form_widget(form)}}
+		<input type="submit" value="Insertar producto">
+	</form>
+{% endblock %}

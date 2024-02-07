@@ -12,6 +12,7 @@
     <td>{{producto.nombre}}</td>
     <td>{{producto.precio}} $</td>
     <td><a href='/producto/{{producto.id}}'>Ver producto</a></td>
+    <td><a href='/carrito?id={{producto.id}}'>Anadir al carrito</a></td>
     </tr>
 {% endfor %}
 </table>

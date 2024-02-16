@@ -13,6 +13,8 @@
         <?php
         session_start();
         require_once("usuario.php");
+        
+        // We unserializa the user object to display the name
         $user = unserialize($_SESSION["usuario"]);
         echo $user->get_nombre() ?>
     </p>

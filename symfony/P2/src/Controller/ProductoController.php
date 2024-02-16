@@ -49,4 +49,11 @@ class ProductoController extends AbstractController {
             die ('El producto no existe');
         }
     }
+
+    #[Route('/{any}')]
+    public function noEncontrado(): Response
+    {
+        return new Response('La pagina a la que ha intentado acceder no existe');
+    }
+
 }

@@ -23,6 +23,7 @@
     </form>
     <?php
     session_start();
+    // If the login returns us to the index with the error attribute set we display a message
     if (isset($_GET['error'])) {
         echo '<p style=color:red>Usuario o contrasena incorrecta</p>';
     }

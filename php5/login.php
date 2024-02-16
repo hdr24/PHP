@@ -7,6 +7,8 @@ if (isset($_POST["user"])) {
         $lista = $db->query('SELECT * FROM usuarios WHERE usuario="' . $_POST['user'] . '"');
         foreach ($lista as $item) {
             if (password_verify($_POST['pass'], $item['pwd'])) {
+
+                // We serialize the user object so we can store it in the session
                 $_SESSION['usuario'] =serialize(new usuario($item['usuario'], $item['email'], $item['id']));
                 header('Location: aplicacion.php');
             } else {
@@ -14,6 +16,6 @@ if (isset($_POST["user"])) {
             }
         }
     } catch (\Throwable $th) {
-        echo $th->getMessage();
+        echo 'Ha ocurrido un error con la base de datos, contacte con el administrador';
     }
 }

@@ -13,7 +13,7 @@ try {
             deleteUser($_POST['id'], $db);
             break;
         case 2:
-            
+
             break;
     }
 

@@ -10,7 +10,7 @@ use App\Form\InsertarProductoType;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProductoController extends AbstractController {
-    #[Route('/producto')]
+    #[Route('/producto', name:'home')]
     public function producto(Request $request, EntityManagerInterface $entityManager): Response {
         
         $repository = $entityManager->getRepository(producto::class);
